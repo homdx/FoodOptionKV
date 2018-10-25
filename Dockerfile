@@ -11,7 +11,7 @@ RUN sudo chown user ${WORK_DIR}/app -Rv
 #RUN chown user /home/user/ -R && chown -R user /home/user/hostcwd
 #USER ${USER}
 
-RUN cd app && buildozer init && time buildozer android debug || echo "Fix build apk"
+RUN cd app && buildozer init && patch -p0 <buildozer-patch.patch && time buildozer android debug || echo "Fix build apk"
 
 CMD tail -f /var/log/faillog
 

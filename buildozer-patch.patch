@@ -1,0 +1,42 @@
+--- buildozer.spec	2018-10-25 12:15:38.845626806 +0300
++++ buildozer.spec.1	2018-10-25 12:17:54.107328482 +0300
+@@ -1,10 +1,10 @@
+ [app]
+ 
+ # (str) Title of your application
+-title = My Application
++title = FoodOptionKV
+ 
+ # (str) Package name
+-package.name = myapp
++package.name = foodoptionkv
+ 
+ # (str) Package domain (needed for android/ios packaging)
+ package.domain = org.test
+@@ -36,7 +36,7 @@
+ 
+ # (list) Application requirements
+ # comma seperated e.g. requirements = sqlite3,kivy
+-requirements = kivy
++requirements = kivy, python3crystax==3.6
+ 
+ # (str) Custom source folders for requirements
+ # Sets custom source for any requirements with recipes
+@@ -103,7 +103,7 @@
+ #android.private_storage = True
+ 
+ # (str) Android NDK directory (if empty, it will be automatically downloaded.)
+-#android.ndk_path =
++android.ndk_path = /home/user/.builduser/crystax-ndk-10.3.1
+ 
+ # (str) Android SDK directory (if empty, it will be automatically downloaded.)
+ #android.sdk_path =
+@@ -220,7 +220,7 @@
+ [buildozer]
+ 
+ # (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
+-log_level = 1
++log_level = 2
+ 
+ # (int) Display warning if buildozer is run as root (0 = False, 1 = True)
+ warn_on_root = 1
