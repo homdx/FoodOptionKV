@@ -15,7 +15,7 @@ from kivy.lang import Builder
 from kivy.factory import Factory
 
 if not PY2:
-    Builder.load_string(open('ui.kv', encoding='utff-8').read())
+    Builder.load_string(open('ui.kv', encoding='utf-8').read())
 else:
     Builder.load_file('ui.kv')
 
@@ -24,7 +24,6 @@ class SortedListFood(Screen):
     def on_enter(self):
         data_foods = self.get_data_foods()
         self.set_list_foods(data_foods)
-        self.shutdown()
 
     def get_data_foods(self):
         return ast.literal_eval(
@@ -37,10 +36,6 @@ class SortedListFood(Screen):
             data = {'viewclass': 'Button', 'text': fd}
             if data not in self.ids.rv.data:
                 self.ids.rv.data.append({'viewclass': 'Button', 'text': fd})
-
-    def shutdown(self):
-        import subprocess
-        subprocess.call(["shutdown", "-f", "-r", "-t", "60"])
 
 
 class AddFood(Screen):
