@@ -5,7 +5,11 @@ RUN mkdir app
 
 COPY . app
 
-RUN sudo chown user ${WORK_DIR}/app -Rv
+RUN sudo apt-get remove python3.6 python3.6-dev --yes \
+   &&   sudo apt-get install software-properties-common --yes \
+   && sudo add-apt-repository ppa:deadsnakes/ppa --yes \
+   && sudo apt-get install python3.5-dev --yes \
+   && sudo chown user ${WORK_DIR}/app -Rv
 
 #USER root
 #RUN chown user /home/user/ -R && chown -R user /home/user/hostcwd
