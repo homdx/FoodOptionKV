@@ -18,7 +18,7 @@
  # (list) Application requirements
  # comma seperated e.g. requirements = sqlite3,kivy
 -requirements = kivy
-+requirements = kivy, python3crystax==3.6
++requirements = kivy, python3crystax==3.5
  
  # (str) Custom source folders for requirements
  # Sets custom source for any requirements with recipes
